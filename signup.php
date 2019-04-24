@@ -74,6 +74,16 @@
               </span>
             </div>
           </div>
+
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-right">
+              <input name="username" class="input" type="text" autocomplete="off">
+              <span class="icon is-small is-right">
+                <i class="fa fa-user"></i>
+              </span>
+            </div>
+          </div>
          
 
           <div class="field">
@@ -87,11 +97,11 @@
           </div>
           
           <div class="has-text-centered">
-            <input type="submit" value="Login" class="button is-vcentered is-primary is-outlined">
+            <input type="submit" value="Register" class="button is-vcentered is-primary is-outlined">
           </div>
     </form>
           <div class="has-text-centered">
-            <a href="signup.php"> Don't you have an account? Sign up now!</a>
+            <a href="login.php"> Already have an account? Log in now!</a>
           </div>
          
         </section>

@@ -14,5 +14,17 @@ class Redirect{
             }
         }
 
+    
+
+    public function Gotolandingpage(){
+
+        $gotolandingpage = true;
+        if(isset($gotolandingpage)){
+            header('Location: landing.php');
+        
+        }else{
+            echo "<br><br><center><h3> ERROR 404 </h3></center>";
+            }
+        }
     }
 ?>
