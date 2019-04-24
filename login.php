@@ -16,6 +16,40 @@
     <link rel="stylesheet" href="resources/css/main.css">
   </head>
   <body>
+
+  <?php
+  spl_autoload_register(function($className) {
+	include_once $_SERVER['DOCUMENT_ROOT'] . '/finance/classes/' . $className . '.php';
+        });
+
+        $database = new Database();
+        $db = $database->getConnection();
+        $user = new User($db);
+     
+       
+        $email=$_POST['UserEmail'];
+        $password=$_POST['UserPassword'];
+
+        if ($user->login($email, $password)){
+
+          $logged_in = true;
+          var_dump ($_SESSION);
+          
+          echo "Login Success!";
+          }
+          // if username does not exist or password is wrong
+      else{
+        $access_denied=true;
+          echo "<div class='alert alert-danger margin-top-40' role='alert'>
+          Access Denied.<br /><br />
+          Your username or password maybe incorrect </div>";
+  }   
+
+
+        ?>
+
+
+
   <div id="particles-js" class="leftinteractive interactive-bg column is-20">
       </div>
     <div class="columns is-vcentered">

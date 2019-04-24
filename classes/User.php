@@ -11,12 +11,12 @@ class User{
     public $id;
     public $name;
     public $email;
-    public $password;
+    protected $password;
  
     public function __construct($db){
         $this->conn = $db;
     }
-    public function create(){
+    public function createuser(){
     
         $query = "INSERT INTO
                     " . $this->table_name . "
@@ -46,20 +46,19 @@ class User{
 
     public function login($email, $password){
 
-        $query = "SELECT email, name, password, ID
+        $query = "SELECT UserEmail, UserName, UserPassword, UserID
         FROM users
-        WHERE (email = '$email' OR name = '$email')
-        AND password = '$password'";
+        WHERE (UserEmail = '$email' OR UserName = '$email')
+        AND UserPassword = '$password'";
 
         $db_result = $this->conn->query($query);
 
         if ($db_result->rowCount()==1){
             foreach($db_result as $row){
-                $email = $row['email'];
-                $_SESSION['email']=$row['email'];
-                $_SESSION['name']=$row['name'];
-                $_SESSION['ID']=$row['ID'];
-                $_SESSION['logged_in'] = true;
+                $email = $row['UserEmail'];
+                $_SESSION['UserEmail']=$row['UserEmail'];
+                $_SESSION['UserName']=$row['UserName'];
+                $_SESSION['UserID']=$row['UserID'];
 
             }
 
