@@ -32,11 +32,8 @@ html{
 .login-logo {
   margin: 0;
   margin-bottom: 50px;
-  margin-top: 10px;
+  margin-top: 0px;
   max-height: 100px;
-  position:absolute;
-  
-
 }
 
 

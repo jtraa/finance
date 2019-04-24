@@ -33,7 +33,6 @@
             $password=$_POST['password'];
           
             if ($user->login($email, $password)){
-                $logged_in=true;
                 $redirect= new Redirect();
                 $redirect->Gotolandingpage();
                 
@@ -41,8 +40,6 @@
             }
               // if username does not exist or password is wrong
           else{
-            $logged_in=false;
-            $access_denied=true;
               echo "<div class='alert alert-danger margin-top-40' role='alert'>
               Access Denied.<br /><br />
               Your username or password maybe incorrect </div>";

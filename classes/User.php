@@ -11,12 +11,12 @@ class User{
     public $id;
     public $name;
     public $email;
-    protected $password;
+    public $password;
  
     public function __construct($db){
         $this->conn = $db;
     }
-    public function createuser(){
+    public function CreateUser(){
     
         $query = "INSERT INTO
                     " . $this->table_name . "

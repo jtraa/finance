@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="assets/img/logo_r_resumme.png" type="image/x-icon" />
-    <title>Log In</title>
+    <title>Sign Up</title>
     <script src="resources/js/particles.js"></script>
     <script src="resources/js/main.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -29,20 +29,18 @@
             $user = new User($db);
           
           
-            $email=$_POST['username'];
-            $password=$_POST['password'];
+            $user->name=$_POST['username'];
+            $user->email=$_POST['email'];
+            $user->password=$_POST['password'];
           
-            if ($user->login($email, $password)){
-                $logged_in=true;
-                $redirect= new Redirect();
-                $redirect->Gotolandingpage();
+            if ($user->CreateUser()){
+                $redirect = new Redirect;
+                $redirect->Gotologin();
                 
                 
             }
               // if username does not exist or password is wrong
           else{
-            $logged_in=false;
-            $access_denied=true;
               echo "<div class='alert alert-danger margin-top-40' role='alert'>
               Access Denied.<br /><br />
               Your username or password maybe incorrect </div>";
@@ -64,7 +62,7 @@
               <img class="login-logo" src="resources/img/accountlogin-icon.png">
           </div>
           
-    <form class="form-login" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method='post'>
+    <form class="form-register" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method='post'>
           <div class="field">
             <label class="label">Username</label>
             <div class="control has-icons-right">
@@ -78,7 +76,7 @@
           <div class="field">
             <label class="label">Email</label>
             <div class="control has-icons-right">
-              <input name="username" class="input" type="text" autocomplete="off">
+              <input name="email" class="input" type="text" autocomplete="off">
               <span class="icon is-small is-right">
                 <i class="fa fa-user"></i>
               </span>
