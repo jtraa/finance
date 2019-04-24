@@ -1,11 +1,17 @@
+html{
+  overflow:hidden;
+}
 
 .interactive-bg {
   height: 100vh;
+ 
+  width: 100vw;
   background-color: #00d1b2;
   -webkit-box-shadow: inset 24px 4px 64px -24px rgba(71,71,71,1);
   -moz-box-shadow: inset 24px 4px 64px -24px rgba(71,71,71,1);
   box-shadow: inset 24px 4px 64px -24px rgba(71,71,71,1);
   padding: 0px;
+  position: absolute;
 }
 @media (max-width: 769px) {
   .interactive-bg{
@@ -26,10 +32,21 @@
 .login-logo {
   margin: 0 auto;
   margin-bottom: 50px;
+  margin-top: 10px;
   max-height: 100px;
 
 }
 
+
 .columns{
   margin: 0px;
+}
+
+
+.login{
+  background-color: white;
+  padding-top: 690px;
+  position: absolute;
+  margin-left: 450px;
+  padding-bottom: 150px;
 }
