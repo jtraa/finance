@@ -41,6 +41,8 @@
             }
               // if username does not exist or password is wrong
           else{
+
+            
               echo "<div class='alert alert-danger margin-top-40' role='alert'>
               Access Denied.<br /><br />
               Your username or password maybe incorrect </div>";
