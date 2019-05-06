@@ -71,7 +71,6 @@
               </span>
             </div>
           </div>
-         
 
           <div class="field">
             <label class="label">Password</label>

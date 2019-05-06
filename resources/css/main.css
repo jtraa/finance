@@ -39,6 +39,7 @@ html{
 
 .columns{
   margin: 0px;
+  z-index: -1;
 }
 
 
